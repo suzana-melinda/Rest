@@ -12,8 +12,9 @@ html {
 }
 
 body {
-    background-image: url("../gfx/images/bkg_2.jpg");
-    background-repeat:  repeat;
+    background-image: url("../gfx/images/bkg_5.jpg");
+     
+    background-attachment: fixed;
     background-color: burlywood;
 
     margin: 0;
@@ -34,7 +35,7 @@ img {
 }
 
 a {
-    color: var(--color-blue-base);
+    color: var(--color-red-base);
 }
 
 a:hover {
@@ -54,6 +55,13 @@ a:hover {
     margin: 0;
 }
 
+.label c{
+    
+    margin-left: 40%;
+}
+.listBox {
+    margin-bottom: 20%;   
+}
 aside,
 footer {
     order: 1;
@@ -85,7 +93,7 @@ nav a {
     display: block;
     text-decoration: none;
     padding: 0.5rem;
-    background: var(--color-blue-light);
+    background: var(--color-red-base);
     color: var(--color-grey-lightest);
     border-bottom: 1px solid var(--color-grey-lightest);
     transition: all 0.1s;
@@ -93,8 +101,8 @@ nav a {
 
 nav a:hover {
     background: var(--color-grey-lightest);
-    color: var(--color-blue-base);
-    border-bottom: 1px solid var(--color-blue-dark);
+    color: var(--color-red-base);
+    border-bottom: 1px solid var(--color-red-dark);
 }
 
 main section h2 {
@@ -202,7 +210,7 @@ cite:before {
 }
 
 .course .price-discount + .price-full:before {
-    content: "only ";
+    content: "Now only ";
 }
 
 
@@ -220,7 +228,7 @@ cite:before {
     padding: 1rem;
     color: var(--color-grey-lightest);
     font-size: var(--font-size-base);
-    background: var(--color-blue-base);
+    background: var(--color-red-base);
     transition: all 0.4s;
     box-shadow: 2px 2px 0px 0px transparent;
     position: relative;
@@ -243,8 +251,8 @@ cite:before {
 .course button:hover {
     cursor: pointer;
     color: var(--color-white);
-    background: var(--color-blue-light);
-    box-shadow: 2px 2px 0px 0px var(--color-blue-base);
+    background: var(--color-red-base);
+    box-shadow: 2px 2px 0px 0px var(--color-red-base);
 }
 
 .course button:hover:before {
@@ -288,7 +296,7 @@ cite:before {
   
 }
 .price-discount + .price-full:before {
-    content: "only ";
+    content: "Now only ";
    
 }
 
@@ -318,7 +326,7 @@ cite:before {
 @media screen and (min-width: 800px) {
     nav {
         display: flex;
-        background: var(--color-blue-light);
+        background: var(--color-red-base);
     }
 
     nav a {
@@ -326,6 +334,7 @@ cite:before {
         flex-grow: 1;
         text-align: center;
     }
+    
 }
 
 @media screen and (min-width: 1000px) {
