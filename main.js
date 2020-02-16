@@ -37,12 +37,12 @@ function createCategories(data) {
         section.appendChild(h2);
 
         document.querySelector("main").appendChild(section);
+        
 
 
     })
     getProducts();
 }
-
 
 function getProducts() {
     //fetching json
@@ -50,13 +50,65 @@ function getProducts() {
         .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
-            showData(data)
-        })
-
+    .then(function (data) {
+        showData(data)
+        filterData(data)
+    })
+        
+        
+   
 }
 
+function filterData(jsonData) {
+   jQuery(document).ready(function( $ ) {
+/*sortPrice = function(){
+$('.course').each(function(){
+    var data1 = $(this).find(".sortprice").text();
+    $(this).attr('data-name', data1);
 
+});
+
+var $products = $('.courseTemplate'),
+    $singleProduct = $('.course');
+
+$singleProduct.sort(function(a,b){
+        var an = a.getAttribute('data-name');
+        var bn = b.getAttribute('data-name');
+        var numberA = Number(an.replace(/[^0-9\.]+/g,""));
+        var numberB = Number(bn.replace(/[^0-9\.]+/g,""));
+        an = numberA;
+        bn = numberB;
+
+        if(an > bn) {
+        return 1;
+    }
+    if(an < bn) {
+        return -1;
+    }
+    return 0;
+});
+
+$singleProduct.detach().appendTo($products);
+
+};*/
+        
+selectionChange = function(){
+var selectResult = $("#filter").val();
+
+if(selectResult == "PriceU"){
+    //sortPrice();
+    document.querySelector(".label span").textContent = "With ";
+
+} else{}/*else if(selectResult == "Sort By A-Z"){
+    sortA();
+
+} else if(selectResult == "Sort By Z-A"){
+    sortZ();
+
+}*/
+};
+});
+}
 
 function showData(jsonData) {
     console.log(jsonData);
@@ -144,8 +196,9 @@ function showDetails(data) {
         modal.querySelector(".price-full span").textContent = newPrice;
 
     } else { // not on discount
-       // modal.querySelector(".price-discount").remove()
-        modal.querySelector(".price-full span").textContent = data.price
+       
+        modal.querySelector(".price-full span").textContent = data.price;
+        modal.querySelector(".price-discount").remove();
     }
   modal.querySelector(".modal-image").src = largeImg;
   modal.querySelector(".modal-name").textContent = data.name;

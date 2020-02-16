@@ -14,7 +14,7 @@
     <div id="wrapper">
         <header>
             <nav>
-                <a href="/">Home</a>
+                <a href="/">home</a>
             </nav>
 
         </header>
@@ -40,10 +40,24 @@
 
 
         <main>
+            <div class="myInput">
+                <label class ="label" for="filter"><c>Filter by:</c></label>
+
+            <select id="filter" onchange="selectionChange()" >
+             <option selected="true" >ALL</option>
+              <option class="listBox" value="PriceU">↓ Price Low</option>
+              <option class="listBox" value="PriceD">↓ Price High</option>
+              <option class="listBox" value="NMeat">Vegetarian</option>
+              <option class="listBox" value="Meat">With Meat</option>
+             <option class="listBox" value="NAlcohol">No alcohol</option>
+            <option class="listBox" value="Alcohol">With alcohol</option>
+            </select>
+  
+            </div>
             <h1>My Awesome Restaurant</h1>
 
 
-                <template id="courseTemplate">
+                <template class="courseTemplate" id="courseTemplate">
                 <article class="course">
                     <header>
                         <h3>The Burger</h3>
